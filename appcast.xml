@@ -6,17 +6,29 @@
     <description>Signed SKADI desktop updates for Windows x64.</description>
     <language>fr</language>
     <item>
-      <title>SKADI 1.0.0-beta.13</title>
-      <sparkle:version>47</sparkle:version>
-      <sparkle:shortVersionString>1.0.0-beta.13</sparkle:shortVersionString>
-      <pubDate>Mon, 10 Aug 2026 14:22:47 GMT</pubDate>
-      <sparkle:releaseNotesLink>https://github.com/arthoriouss/skadi-releases/releases/tag/v1.0.0-beta.13</sparkle:releaseNotesLink>
+      <title>SKADI 1.0.0-beta.14</title>
+      <sparkle:version>48</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta.14</sparkle:shortVersionString>
+      <pubDate>Wed, 19 Aug 2026 14:51:12 GMT</pubDate>
+      <description><![CDATA[
+<div style="font-family: Segoe UI, sans-serif; font-size: 13px; line-height: 1.45; color: #202124; padding: 4px 8px;">
+<h1>SKADI 1.0.0-beta.14</h1>
+<p>Cette bêta consolide l’expérience multi-serveur Plex/Jellyfin sur desktop et Fire TV, améliore l’onboarding Jellyfin et rend les choix de navigation persistants et indépendants de l’ordre de connexion des serveurs.</p>
+<h2>Points principaux</h2>
+<ul><li>Ajoute la découverte LAN Jellyfin et Quick Connect sur Fire TV, avec URL manuelle disponible lorsque la découverte locale n’est pas utilisable.</li><li>Ajoute Quick Connect Jellyfin sur desktop avec connexion par URL en priorité et identifiant/mot de passe en solution de repli.</li><li>Sépare durablement le serveur préféré du runtime momentanément actif : un serveur qui répond plus vite au démarrage ne remplace plus le choix explicite de l’utilisateur.</li><li>Rend l’ordre des serveurs et des bibliothèques persistant dans la navigation, indépendamment de l’ordre de reconnexion.</li><li>Ajoute la personnalisation explicite de la navigation Fire TV tout en conservant l’appui OK normal pour ouvrir ou refermer les bibliothèques d’un serveur.</li><li>Stabilise l’expérience séries sur desktop avec une navigation Série / Saisons / Tous les épisodes cohérente et un contexte visuel de série conservé.</li><li>Regroupe plusieurs corrections Fire TV sur le focus, les collections, la navigation multi-serveur et les parcours d’onboarding.</li></ul>
+<h2>Mise à jour Windows</h2>
+<p>Cette version est destinée à valider le cycle complet de mise à jour depuis SKADI 1.0.0-beta.13 via WinSparkle : détection de beta.14, téléchargement de l’installateur signé pour le feed de mise à jour, installation dans le même emplacement et relance de SKADI sans perte des comptes ni des préférences.</p>
+<h2>Limitations connues</h2>
+<ul><li>L’installateur Windows peut toujours être présenté comme éditeur inconnu par SmartScreen lorsqu’aucun certificat Authenticode n’est configuré.</li><li>Linux et macOS restent qualifiés séparément tant que leurs builders dédiés ne sont pas réactivés.</li><li>Le client webOS conserve actuellement son runtime Plex dédié.</li></ul>
+</div>
+
+      ]]></description>
       <enclosure
-        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.13/SKADI-Setup-1.0.0-beta.13-windows-x64.exe"
-        length="82754223"
+        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.14/SKADI-Setup-1.0.0-beta.14-windows-x64.exe"
+        length="83126705"
         type="application/octet-stream"
         sparkle:os="windows-x64"
-        sparkle:edSignature="H2si3sFdG2wno+j5NgZBIcvKzyB//RfFGMtB5xj2XtGA1TgAO1CZRXLoNdRHj9JOXY8CyVL6Q8IEthmU6Ly5Dw=="
+        sparkle:edSignature="GPEO1tgHFdVZP6Xa293xH/77y4OhvoG1C4Fs1colBlEhOocsOc8pWug76lrh7ZEeDvEmqgfL0Y45tG9ZR4twDA=="
         sparkle:installerArguments="/SILENT /SP- /NOICONS /RELAUNCH=1" />
     </item>
   </channel>
