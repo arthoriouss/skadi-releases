@@ -6,29 +6,32 @@
     <description>Signed SKADI desktop updates for Windows x64.</description>
     <language>fr</language>
     <item>
-      <title>SKADI 1.0.0-beta.14</title>
-      <sparkle:version>48</sparkle:version>
-      <sparkle:shortVersionString>1.0.0-beta.14</sparkle:shortVersionString>
-      <pubDate>Wed, 19 Aug 2026 14:51:12 GMT</pubDate>
+      <title>SKADI 1.0.0-beta.15</title>
+      <sparkle:version>49</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta.15</sparkle:shortVersionString>
+      <pubDate>Mon, 31 Aug 2026 12:47:51 GMT</pubDate>
       <description><![CDATA[
 <div style="font-family: Segoe UI, sans-serif; font-size: 13px; line-height: 1.45; color: #202124; padding: 4px 8px;">
-<h1>SKADI 1.0.0-beta.14</h1>
-<p>Cette bêta consolide l’expérience multi-serveur Plex/Jellyfin sur desktop et Fire TV, améliore l’onboarding Jellyfin et rend les choix de navigation persistants et indépendants de l’ordre de connexion des serveurs.</p>
+<h1>SKADI 1.0.0-beta.15</h1>
+<p>Cette bêta se concentre sur la qualité de l’expérience desktop, le verrouillage par profils SKADI et la stabilisation finale de l’architecture avant release. Elle conserve le périmètre de compatibilité de beta.14 et ne modifie pas le format des comptes ou des bibliothèques existants.</p>
 <h2>Points principaux</h2>
-<ul><li>Ajoute la découverte LAN Jellyfin et Quick Connect sur Fire TV, avec URL manuelle disponible lorsque la découverte locale n’est pas utilisable.</li><li>Ajoute Quick Connect Jellyfin sur desktop avec connexion par URL en priorité et identifiant/mot de passe en solution de repli.</li><li>Sépare durablement le serveur préféré du runtime momentanément actif : un serveur qui répond plus vite au démarrage ne remplace plus le choix explicite de l’utilisateur.</li><li>Rend l’ordre des serveurs et des bibliothèques persistant dans la navigation, indépendamment de l’ordre de reconnexion.</li><li>Ajoute la personnalisation explicite de la navigation Fire TV tout en conservant l’appui OK normal pour ouvrir ou refermer les bibliothèques d’un serveur.</li><li>Stabilise l’expérience séries sur desktop avec une navigation Série / Saisons / Tous les épisodes cohérente et un contexte visuel de série conservé.</li><li>Regroupe plusieurs corrections Fire TV sur le focus, les collections, la navigation multi-serveur et les parcours d’onboarding.</li></ul>
+<ul><li><strong>Palette de commandes desktop</strong> : <code>Ctrl/Cmd+K</code> ouvre un lanceur rapide pour la navigation et les actions de session. La recherche média directe utilise désormais <code>Ctrl/Cmd+F</code>.</li><li><strong>Recherche de réglages</strong> : les réglages sont indexés par libellé, description et mots-clés afin d’ouvrir rapidement la bonne section.</li><li><strong>Recherche média plus fiable</strong> : films et séries passent avant les personnes, les saisons et épisodes restent accessibles, et les artefacts de hubs Plex qui ne représentent pas un média pris en charge sont filtrés.</li><li><strong>Historique desktop</strong> : les épisodes utilisent leurs visuels paysage 16:9 et la timeline gagne en densité et en lisibilité sur les grandes fenêtres.</li><li><strong>Sauvegarde des réglages explicite</strong> : export et import utilisent maintenant de vrais fichiers JSON avec dialogue de sélection, au lieu d’un échange implicite via le presse-papiers.</li><li><strong>Verrouillage SKADI par profil</strong> : verrouiller une session ouvre le sélecteur de profils SKADI, conserve les runtimes serveur actifs et demande le PIN du profil lorsque nécessaire. Le gate se réarme aussi correctement lorsqu’une session déjà ouverte est verrouillée.</li><li><strong>Architecture stabilisée</strong> : <code>ProfileSessionFacade</code>, <code>ServerRuntimeDirectory</code> et plusieurs services provider-specific réduisent les dépendances au <code>SessionController</code> et aux façades backend composites.</li><li><strong>Lecture desktop</strong> : le cycle de diagnostics MPV est davantage isolé, les garde-fous de taille sont restaurés et la provenance du runtime MPV est synchronisée avec les validateurs de release.</li></ul>
+<h2>Qualification de la release candidate</h2>
+<p>La release candidate a été qualifiée avec Flutter 3.44.0. Avant création du tag, le script de livraison relance l’analyse statique, la suite Flutter complète et les validateurs d’architecture/release du dépôt.</p>
+<p>Le tag attendu est <code>v1.0.0-beta.15</code> et le build multi-plateforme est <code>49</code> (<code>1.0.49</code> pour la projection numérique webOS).</p>
 <h2>Mise à jour Windows</h2>
-<p>Cette version est destinée à valider le cycle complet de mise à jour depuis SKADI 1.0.0-beta.13 via WinSparkle : détection de beta.14, téléchargement de l’installateur signé pour le feed de mise à jour, installation dans le même emplacement et relance de SKADI sans perte des comptes ni des préférences.</p>
+<p>La chaîne Windows conserve WinSparkle et le mécanisme de publication de beta.14. L’installateur et le ZIP portable doivent être produits depuis le commit taggé, avec le manifest et les sommes SHA-256 correspondantes. Les comptes, profils SKADI, préférences et données hors connexion existants doivent être conservés lors de la mise à jour.</p>
 <h2>Limitations connues</h2>
-<ul><li>L’installateur Windows peut toujours être présenté comme éditeur inconnu par SmartScreen lorsqu’aucun certificat Authenticode n’est configuré.</li><li>Linux et macOS restent qualifiés séparément tant que leurs builders dédiés ne sont pas réactivés.</li><li>Le client webOS conserve actuellement son runtime Plex dédié.</li></ul>
+<ul><li>Windows x64 reste la cible de bêta principale et doit être smoke-testée sur une installation propre ainsi que sur une mise à jour depuis beta.14.</li><li>Sans certificat Authenticode configuré, Windows SmartScreen peut toujours afficher SKADI comme éditeur inconnu.</li><li>Linux et macOS restent des builds preview à qualifier séparément tant que leurs builders dédiés ne sont pas réactivés.</li><li>Les parcours HDR, passthrough, changement de fréquence, sous-titres externes et lecture hors connexion restent à qualifier sur le matériel cible avant d’élargir la distribution.</li><li>Le client webOS conserve son runtime Plex dédié et sa qualification propre.</li></ul>
 </div>
 
       ]]></description>
       <enclosure
-        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.14/SKADI-Setup-1.0.0-beta.14-windows-x64.exe"
-        length="83126705"
+        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.15/SKADI-Setup-1.0.0-beta.15-windows-x64.exe"
+        length="84696727"
         type="application/octet-stream"
         sparkle:os="windows-x64"
-        sparkle:edSignature="GPEO1tgHFdVZP6Xa293xH/77y4OhvoG1C4Fs1colBlEhOocsOc8pWug76lrh7ZEeDvEmqgfL0Y45tG9ZR4twDA=="
+        sparkle:edSignature="klSIqmX6ekAeFUn0UDjo3+SqHzgyHLNrVDrCHnRLo5cuwvYvGThQM4FupPOE2X/KqbMPDfZg3iuV2HeKEoSLCA=="
         sparkle:installerArguments="/SILENT /SP- /NOICONS /RELAUNCH=1" />
     </item>
   </channel>
