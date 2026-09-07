@@ -6,33 +6,27 @@
     <description>Signed SKADI desktop updates for Windows x64.</description>
     <language>fr</language>
     <item>
-      <title>SKADI 1.0.0-beta.16</title>
-      <sparkle:version>50</sparkle:version>
-      <sparkle:shortVersionString>1.0.0-beta.16</sparkle:shortVersionString>
-      <pubDate>Fri, 04 Sep 2026 10:14:21 GMT</pubDate>
+      <title>SKADI 1.0.0-beta.17</title>
+      <sparkle:version>51</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta.17</sparkle:shortVersionString>
+      <pubDate>Mon, 07 Sep 2026 21:29:00 GMT</pubDate>
       <description><![CDATA[
 <div style="font-family: Segoe UI, sans-serif; font-size: 13px; line-height: 1.45; color: #202124; padding: 4px 8px;">
-<h1>SKADI 1.0.0-beta.16</h1>
-<p>Cette bêta consolide fortement l’expérience desktop et la fiabilité des plateformes TV. Elle regroupe les correctifs de cycle de vie du lecteur, la nouvelle chaîne Linux qualifiée, un updater Windows plus robuste et plusieurs améliorations Fire TV/webOS livrées depuis beta.15.</p>
+<h1>SKADI 1.0.0-beta.17</h1>
+<p>Cette bêta inaugure la nouvelle chaîne de release desktop coordonnée de SKADI. Un même tag produit désormais le jeu Windows + Linux complet et la publication publique n’est effectuée qu’après validation de l’ensemble des artefacts.</p>
 <h2>Points principaux</h2>
-<ul><li><strong>Mises à jour Windows plus propres</strong> : WinSparkle demande désormais une fermeture coopérative de SKADI avant l’installation, Inno Setup ferme explicitement les applications qui verrouillent les fichiers, puis SKADI se relance automatiquement. Un smoke test non-publishing couvre ce parcours.</li><li><strong>Lecture desktop plus robuste</strong> : l’arrêt et la destruction du player sont sérialisés, le teardown MPV/media_kit est ordonné pour éviter les courses natives, la position de reprise est préservée à l’ouverture et les contrôles de pistes se mettent à jour lorsque les métadonnées arrivent en différé.</li><li><strong>Navigation Continue Watching corrigée</strong> : ouvrir un média depuis Continuer à regarder ne déclenche plus implicitement une lecture lorsqu’une navigation vers la fiche est attendue.</li><li><strong>Linux largement stabilisé</strong> : nouveau builder release Ubuntu 22.04, bridge runtime compatible <code>libmpv1</code>/<code>libmpv2</code>, packaging et gates ABI/GLIBC renforcés, teardown Wayland corrigé, plein écran et pacing fiabilisés, récupération audio améliorée et gestion veille/réveil via <code>systemd-logind</code>.</li><li><strong>Fire TV enrichi</strong> : gestion de profils SKADI, navigation bibliothèque et recherche TV renforcées, vues personne et détails améliorées, Direct Play DTS logiciel lorsque nécessaire et adaptation de la fréquence d’affichage avant lecture.</li><li><strong>webOS renforcé</strong> : boucle de développement C9, diagnostics de lecture, actions média plus complètes, navigation télécommande durcie et tests de stabilité longue durée/qualification matérielle.</li><li><strong>Qualité release</strong> : les validateurs Flutter, architecture, packaging et workflows couvrent davantage les contrats natifs et les chemins de livraison.</li></ul>
-<h2>Windows</h2>
-<p>Le client Windows reste la cible de bêta principale. Le parcours de mise à jour a été testé de bout en bout avec fermeture automatique de SKADI, installation sans erreur de fichier DLL verrouillé et relance automatique de l’application. Les futures mises à jour bénéficient du callback de fermeture coopérative intégré à cette version.</p>
-<h2>Linux</h2>
-<p>Les artefacts Linux sont désormais construits sur une baseline Ubuntu 22.04 afin de réduire l’exigence GLIBC. Le même artefact a été qualifié sur Ubuntu 24.04 Wayland avec lancement, lecture, passage fenêtre/plein écran, Stop, mise en veille, reprise et fermeture propres. Linux reste une cible preview pendant l’élargissement de la matrice de distributions.</p>
-<h2>Qualification de la release candidate</h2>
-<p>La release candidate utilise Flutter 3.44.0. Le tag attendu est <code>v1.0.0-beta.16</code> et le build multi-plateforme est <code>50</code> (<code>1.0.50</code> pour la projection numérique webOS). Les validations de version, hygiène release, architecture, packaging et la suite Flutter doivent être vertes sur le commit final avant création du tag.</p>
-<h2>Limitations connues</h2>
-<ul><li>L’installateur Windows n’utilise pas encore de certificat Authenticode public ; Microsoft Defender SmartScreen peut donc afficher SKADI comme application non reconnue. La signature Ed25519 WinSparkle continue de protéger l’authenticité des mises à jour.</li><li>macOS reste une cible preview à requalifier séparément avant une distribution élargie.</li><li>Les parcours HDR, passthrough, sous-titres externes et lecture hors connexion restent à qualifier sur davantage de matériels et de combinaisons serveur.</li><li>Le client webOS conserve actuellement son runtime Plex dédié ; Fire TV et webOS poursuivent leur qualification sur les générations matérielles ciblées.</li></ul>
+<ul><li><strong>Release factory coordonnée</strong> : le workflow de production gère désormais les tags <code>v*</code> et construit Windows et Linux dans une seule chaîne contrôlée.</li><li><strong>Linux prêt pour distribution</strong> : tar.gz portable, paquet Debian, RPM Fedora et bundle Flatpak sont générés à partir du chemin qualifié.</li><li><strong>Flatpak durci</strong> : pile mpv/libplacebo/libXpresent épinglée, X11/Wayland/VAAPI activés, DRM direct désactivé et branche exportée <code>stable</code>.</li><li><strong>Publication atomique</strong> : une nouvelle release reste en brouillon tant que tous les fichiers attendus et <code>appcast.xml</code> ne sont pas publiés avec succès.</li><li><strong>Windows conservé et vérifié</strong> : l’installateur, le ZIP portable et WinSparkle restent intégrés au même gate de release.</li></ul>
+<h2>Version</h2>
+<p>Le tag attendu est <code>v1.0.0-beta.17</code> et le build multi-plateforme est <code>51</code> (<code>1.0.51</code> pour la projection numérique webOS).</p>
 </div>
 
       ]]></description>
       <enclosure
-        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.16/SKADI-Setup-1.0.0-beta.16-windows-x64.exe"
-        length="84697107"
+        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.17/SKADI-Setup-1.0.0-beta.17-windows-x64.exe"
+        length="84725624"
         type="application/octet-stream"
         sparkle:os="windows-x64"
-        sparkle:edSignature="6AVrXhq3JFD73KuBfWknDyqHoIRCRcbn8jDsC+YPFLnhKqd/zHe5+BrnsnPxlQe+iKkqyyKu8d6c0ycsFjQdBw=="
+        sparkle:edSignature="Y5nirNfByBrcyyRsihRg/qj4JvZg3sDeCMyyD6nnJPfw1zdKeNkD/mHBkNlvu+I/nu4woa43TMS+ZEIEwNStDw=="
         sparkle:installerArguments="/SILENT /SP- /NOICONS /CLOSEAPPLICATIONS /NORESTARTAPPLICATIONS /RELAUNCH=1" />
     </item>
   </channel>
