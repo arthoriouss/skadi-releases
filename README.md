@@ -57,7 +57,7 @@ sha256sum --check --ignore-missing SHA256SUMS.txt
 
 Run the installer, or unzip the portable archive and start SKADI from it. Installing a newer version over an existing one updates it in place.
 
-The installer is signed only when the release was built with a code-signing certificate. If Windows SmartScreen warns about an unrecognized app, check the SHA-256 hash above before choosing to run it.
+Beta builds are **not code-signed**, so Windows SmartScreen will likely show "Windows protected your PC" the first time. Check the SHA-256 hash above, then click **More info** → **Run anyway**. Your browser may also warn about an uncommon download; choose **Keep**.
 
 ### Linux
 
