@@ -40,13 +40,13 @@
 <p>Sur une nouvelle installation, les rapports de crash sont <strong>désactivés par défaut</strong>. Ils ne sont envoyés qu'après activation affirmative dans les réglages de confidentialité. Vous pouvez désactiver les futurs rapports à tout moment. Dans les versions bêta LG webOS, l'application demande une seule fois, sur le premier écran d'accueil, si elle peut activer les rapports ; la réponse est conservée et les deux options restent dans Paramètres &rsaquo; Confidentialité.</p>
 <p>SKADI configure Sentry sans PII par défaut et désactive le tracing de performance, les breadcrumbs HTTP, la capture des requêtes échouées et le suivi automatique des sessions. Avant envoi, SKADI retire des événements les champs utilisateur/requête/serveur et filtre les jetons, autorisations/cookies, URL, hôtes, adresses e-mail, noms d'utilisateur, adresses privées et chemins utilisateur fournis par l'application.</p>
 <p>Un rapport peut néanmoins contenir des informations techniques telles que la pile d'appels, la version de l'application, des diagnostics système/appareil et des métadonnées réseau nécessaires à l'acheminement du rapport.</p>
-<p>Rétention Sentry du projet : <span class="todo">TODO (propriétaire) : indiquer la durée de rétention configurée dans le projet Sentry</span></p>
+<p>Rétention Sentry du projet : les rapports sont conservés 30 jours, puis supprimés automatiquement.</p>
 
 <h3>Rapports facultatifs de compatibilité de lecture TV</h3>
 <p>Sur les appareils TV compatibles (Android TV / Fire OS et LG webOS), SKADI peut envoyer un résumé technique à la fin d'une lecture. Cette option est <strong>désactivée par défaut</strong>, nécessite d'abord l'accord aux rapports de crash, puis un consentement <strong>distinct</strong> pour la compatibilité de lecture. Les deux options sont révocables.</p>
 <p>Le résumé peut inclure le modèle de TV et la version du système (API Android, ou webOS, moteur du navigateur, firmware et SDK sur LG webOS), les métadonnées des formats vidéo/audio/sous-titres, la résolution, le HDR, la stratégie de lecture déclarée, la première image, la durée, l'issue et le motif d'arrêt, les images perdues, les rebufferings et les incidents audio. Sur LG webOS, il inclut aussi le type de fournisseur, le nombre de tentatives de lecture, les codes d'erreur média et les résultats de tests des formats que la TV sait décoder. Un rapport de capacités est envoyé par TV et par version de l'application.</p>
 <p>Les attributs applicatifs ne comprennent pas de titres, noms ou adresses de serveurs, URL, chemins de fichiers, jetons, noms d'utilisateur ou adresses e-mail. Les modèles d'appareil et codecs inconnus sont remplacés par des valeurs génériques.</p>
-<p>Traitement des adresses IP par Sentry et rétention pour ce projet : <span class="todo">TODO (propriétaire) : décrire la configuration effective du projet Sentry</span></p>
+<p>Adresses IP : l’option « Prevent Storing of IP Addresses » est activée sur le projet Sentry de SKADI ; les adresses IP des clients ne sont donc pas enregistrées avec les rapports. Les rapports sont conservés 30 jours.</p>
 
 <h3>Windows et Linux</h3>
 <p>Les rapports de crash et de compatibilité de lecture sont facultatifs et désactivés par défaut ; ce sont deux choix distincts, limités aux données techniques décrites ci-dessus.</p>
@@ -63,7 +63,7 @@
 
 <h2>7. Suppression des rapports de crash</h2>
 <p>Désactiver les rapports de crash empêche les futurs envois facultatifs. Cela ne supprime pas à lui seul les rapports historiques déjà traités par Sentry.</p>
-<p>Processus de demande de suppression : <span class="todo">TODO (propriétaire) : décrire comment demander la suppression des données de diagnostic</span></p>
+<p>Demande de suppression : écrivez à <a href="mailto:skadiapp.support@gmail.com">skadiapp.support@gmail.com</a>. Les données de diagnostic correspondantes sont supprimées sous 30 jours.</p>
 
 <h2>8. La page de signalement</h2>
 <p>La page <a href="../../report/?lang=fr">arthoriouss.github.io/skadi-releases/report/</a> s'ouvre lorsque vous choisissez « Signaler un problème » dans l'application (sur TV, en scannant un QR code). Le lien contient des informations techniques (version, build, plateforme, modèle d'appareil, système, types de serveurs Plex, Jellyfin, Emby) pour préremplir le signalement. La page n'utilise aucun script, police ou traceur externe et <strong>n'envoie rien toute seule</strong>.</p>
@@ -75,14 +75,14 @@
 <p>N'incluez pas d'adresses de serveur, de jetons, de mots de passe ni d'autres données personnelles.</p>
 
 <h2>9. Enfants</h2>
-<p>SKADI est un client général de serveur multimédia. <span class="todo">TODO (propriétaire) : confirmer que la déclaration de public cible est cohérente avec le plan de distribution final et la législation applicable.</span></p>
+<p>SKADI est un client général de serveur multimédia. L’application ne s’adresse pas aux enfants de moins de 13 ans et SKADI ne collecte sciemment aucune donnée concernant des enfants.</p>
 
 <h2>10. Modifications</h2>
 <p>Cette politique est mise à jour lorsque les pratiques de données, SDK, intégrations fournisseur ou procédures de support/suppression changent de manière significative. La date « Dernière mise à jour » indique la dernière révision.</p>
 
 <h2>11. Contact</h2>
 <p>Support : <a href="https://github.com/arthoriouss/skadi-releases/issues">tickets GitHub</a> ou la <a href="../../report/?lang=fr">page de signalement</a>.</p>
-<p>Confidentialité : <span class="todo">TODO (propriétaire) : ajouter l'adresse de contact confidentialité (aucune dans le brouillon)</span></p>
+<p>Contact confidentialité : <a href="mailto:skadiapp.support@gmail.com">skadiapp.support@gmail.com</a></p>
 
 <footer><a href="../../">SKADI</a></footer>
 </main>
