@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<title>Report a problem - SKADI</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main>
+<nav class="lang"><a href="#" id="langToggle"></a></nav>
+<h1 id="title"></h1>
+<p id="intro"></p>
+<div class="card" id="summaryCard" hidden>
+  <strong id="summaryTitle"></strong>
+  <dl id="summary"></dl>
+</div>
+<a class="btn" id="btnGithub" href="#" rel="noopener noreferrer"></a>
+<p class="muted" id="hintGithub"></p>
+<a class="btn alt" id="btnTally" href="#" rel="noopener noreferrer"></a>
+<p class="muted" id="hintTally"></p>
+<p class="warn" id="warn"></p>
+<h2 id="sendsTitle"></h2>
+<p id="sends"></p>
+<footer><a id="privacyLink" href="../privacy/"></a> · <a href="../">SKADI</a></footer>
+</main>
+<script>
+(function () {
+  "use strict";
+  var TALLY_FORM_URL = "https://tally.so/r/aOQ6XZ";
+  var GITHUB_ISSUE_URL = "https://github.com/arthoriouss/skadi-releases/issues/new";
+  var MAX_LEN = 120;
+
+  /* BEGIN LOGIC */
+  function clean(value) {
+    if (value === null || value === undefined) return "";
+    var s = String(value).replace(/[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim();
+    return s.length > MAX_LEN ? s.slice(0, MAX_LEN) : s;
+  }
+  var KEYS = ["v", "b", "p", "m", "os", "srv", "cat", "lang"];
+  function readParams(search) {
+    var out = {};
+    var q = String(search || "").replace(/^\?/, "");
+    if (!q) return out;
+    var parts = q.split("&");
+    for (var i = 0; i < parts.length; i++) {
+      if (!parts[i]) continue;
+      var eq = parts[i].indexOf("=");
+      var rawKey = eq < 0 ? parts[i] : parts[i].slice(0, eq);
+      var rawVal = eq < 0 ? "" : parts[i].slice(eq + 1);
+      var key, val;
+      try {
+        key = decodeURIComponent(rawKey.replace(/\+/g, " "));
+        val = decodeURIComponent(rawVal.replace(/\+/g, " "));
+      } catch (e) { continue; }
+      if (KEYS.indexOf(key) < 0 || Object.prototype.hasOwnProperty.call(out, key)) continue;
+      val = clean(val);
+      if (val) out[key] = val;
+    }
+    return out;
+  }
+  function pickLang(params, navLang) {
+    var l = String(params.lang || "").toLowerCase();
+    if (l === "fr" || l === "en") return l;
+    return String(navLang || "").toLowerCase().indexOf("fr") === 0 ? "fr" : "en";
+  }
+  function query(pairs) {
+    var out = [];
+    for (var i = 0; i < pairs.length; i++) {
+      if (pairs[i][1]) out.push(encodeURIComponent(pairs[i][0]) + "=" + encodeURIComponent(pairs[i][1]));
+    }
+    return out.join("&");
+  }
+  function buildGithubUrl(base, p) {
+    var title = "";
+    if (p.p || p.cat) {
+      title = (p.p ? "[" + p.p + "] " : "") + (p.cat ? p.cat + " " : "") + "\u2013 ";
+    }
+    return base + "?" + query([
+      ["template", "bug.yml"], ["title", title],
+      ["version", p.v], ["build", p.b], ["platform", p.p], ["device", p.m],
+      ["os", p.os], ["servers", p.srv], ["category", p.cat]
+    ]);
+  }
+  function buildTallyUrl(base, p, lang) {
+    if (!base) return "";
+    var q = query([["v", p.v], ["b", p.b], ["p", p.p], ["m", p.m], ["os", p.os],
+      ["srv", p.srv], ["cat", p.cat], ["lang", lang]]);
+    return base + (base.indexOf("?") < 0 ? "?" : "&") + q;
+  }
+  /* END LOGIC */
+
+  var T = {
+    en: {
+      title: "Report a problem",
+      intro: "Thanks for helping improve SKADI. Nothing is sent from this page by itself: you choose below where your report goes.",
+      summary: "Technical info received from the app",
+      labels: { v: "Version", b: "Build", p: "Platform", m: "Device", os: "System", srv: "Servers", cat: "Category" },
+      github: "I have a GitHub account",
+      hintGithub: "Opens a public issue form, prefilled with the info above.",
+      tally: "I don't have an account",
+      hintTally: "Opens a private form that only the developer can read.",
+      soon: "Coming soon.",
+      warn: "Never share your server address, tokens or passwords in a report.",
+      sendsTitle: "What happens to my report?",
+      sends: "This page sends nothing by itself. If you use GitHub, your report is public. If you use the form, it is private to the developer.",
+      privacy: "Privacy policy",
+      other: "Français", otherLang: "fr"
+    },
+    fr: {
+      title: "Signaler un problème",
+      intro: "Merci d'aider à améliorer SKADI. Cette page n'envoie rien toute seule : vous choisissez ci-dessous où va votre signalement.",
+      summary: "Informations techniques reçues de l'application",
+      labels: { v: "Version", b: "Build", p: "Plateforme", m: "Appareil", os: "Système", srv: "Serveurs", cat: "Catégorie" },
+      github: "J'ai un compte GitHub",
+      hintGithub: "Ouvre un formulaire de ticket public, prérempli avec les infos ci-dessus.",
+      tally: "Je n'ai pas de compte",
+      hintTally: "Ouvre un formulaire privé, lisible uniquement par le développeur.",
+      soon: "Bientôt disponible.",
+      warn: "Ne partagez jamais l'adresse de votre serveur, de jetons ou de mots de passe dans un signalement.",
+      sendsTitle: "Que devient mon signalement ?",
+      sends: "Cette page n'envoie rien toute seule. Avec GitHub, votre signalement est public. Avec le formulaire, il reste privé et n'est lu que par le développeur.",
+      privacy: "Politique de confidentialité (en anglais)",
+      other: "English", otherLang: "en"
+    }
+  };
+
+  function $(id) { return document.getElementById(id); }
+  function render() {
+    var params = readParams(window.location.search);
+    var lang = pickLang(params, navigator.language || (navigator.languages && navigator.languages[0]));
+    var t = T[lang];
+    document.documentElement.lang = lang;
+    document.title = t.title + " - SKADI";
+    $("title").textContent = t.title;
+    $("intro").textContent = t.intro;
+    $("summaryTitle").textContent = t.summary;
+    $("btnGithub").textContent = t.github;
+    $("hintGithub").textContent = t.hintGithub;
+    $("btnTally").textContent = t.tally;
+    $("warn").textContent = t.warn;
+    $("sendsTitle").textContent = t.sendsTitle;
+    $("sends").textContent = t.sends;
+    $("privacyLink").textContent = t.privacy;
+    $("privacyLink").setAttribute("href", lang === "fr" ? "../privacy/fr/" : "../privacy/");
+
+    var dl = $("summary");
+    while (dl.firstChild) dl.removeChild(dl.firstChild);
+    var any = false;
+    ["v", "b", "p", "m", "os", "srv", "cat"].forEach(function (k) {
+      if (!params[k]) return;
+      any = true;
+      var dt = document.createElement("dt");
+      dt.textContent = t.labels[k];
+      var dd = document.createElement("dd");
+      dd.textContent = params[k];
+      dl.appendChild(dt);
+      dl.appendChild(dd);
+    });
+    $("summaryCard").hidden = !any;
+
+    $("btnGithub").setAttribute("href", buildGithubUrl(GITHUB_ISSUE_URL, params));
+
+    var tallyUrl = buildTallyUrl(TALLY_FORM_URL, params, lang);
+    var bt = $("btnTally");
+    if (tallyUrl) {
+      bt.setAttribute("href", tallyUrl);
+      bt.removeAttribute("aria-disabled");
+      $("hintTally").textContent = t.hintTally;
+    } else {
+      bt.removeAttribute("href");
+      bt.setAttribute("aria-disabled", "true");
+      $("hintTally").textContent = t.soon;
+    }
+
+    var toggle = $("langToggle");
+    toggle.textContent = t.other;
+    toggle.onclick = function (e) {
+      e.preventDefault();
+      var sp = new URLSearchParams(window.location.search);
+      sp.set("lang", t.otherLang);
+      window.location.search = sp.toString();
+    };
+  }
+  render();
+})();
+</script>
+</body>
+</html>

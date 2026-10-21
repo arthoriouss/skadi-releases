@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a problem (guided page, with or without a GitHub account)
+    url: https://arthoriouss.github.io/skadi-releases/report/
+    about: Opens the SKADI report page. Technical details from the app are prefilled.

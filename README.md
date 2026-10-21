@@ -75,11 +75,11 @@ The `.deb` and `.rpm` rely on the distribution's `libmpv` package.
 
 ## Reporting a bug
 
-Open an issue on this repository: <https://github.com/arthoriouss/skadi-releases/issues>. Please include your SKADI version, platform and OS version, and the server type (Plex, Jellyfin or Emby). Do not paste server URLs or tokens. Issue templates are coming soon.
+Use the report page, which works with or without a GitHub account: <https://arthoriouss.github.io/skadi-releases/report/>. Or open an issue directly with the form: <https://github.com/arthoriouss/skadi-releases/issues/new?template=bug.yml>. Please include your SKADI version, platform and OS version, and the server type (Plex, Jellyfin or Emby). Do not paste server URLs, tokens or passwords.
 
 ## Privacy
 
 Crash reports and playback compatibility reports are **opt-in** and off by default; they are two separate choices. Reports are limited to technical data (for example device model, OS version, formats and codecs, playback outcome). Titles, server names and addresses, URLs, media paths, tokens, user names and e-mail addresses are not sent; free text is redacted before sending.
 
-- Privacy policy: coming soon
+- Privacy policy: <https://arthoriouss.github.io/skadi-releases/privacy/>
 - End-user license agreement (EULA): coming soon
