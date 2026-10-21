@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Privacy policy - SKADI</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main>
+<nav class="lang"><a href="fr/" hreflang="fr" lang="fr">Français</a></nav>
+<h1>SKADI Privacy Policy</h1>
+<p class="muted">Last updated: 2026-10-21</p>
+<p class="muted">Policy URL: https://arthoriouss.github.io/skadi-releases/privacy/</p>
+
+<h2>1. About SKADI</h2>
+<p>SKADI is an independent, unofficial media-client application that connects to media servers and accounts selected by the user, including Plex, Jellyfin, and Emby. SKADI does not provide or host the user's media library and does not create a SKADI cloud account.</p>
+
+<h2>2. Data stored on your device</h2>
+<p>SKADI stores information needed to operate the app locally. Depending on the features you use, this can include:</p>
+<ul>
+<li>a randomly generated app/device client identifier;</li>
+<li>registered media-server names, identifiers, addresses, and connection state;</li>
+<li>local SKADI profiles and their server/user bindings;</li>
+<li>home, library, playback, subtitle/audio, watchlist, and other preferences;</li>
+<li>local collections and playback-source history;</li>
+<li>authentication tokens and provider sessions in the platform's secure storage;</li>
+<li>downloaded/offline media and download metadata when you use downloads.</li>
+</ul>
+<p>This device-local information is not uploaded to a SKADI account service, because SKADI does not operate such an account service.</p>
+
+<h2>3. Connections to Plex, Jellyfin, and Emby</h2>
+<p>When you connect a provider or server, SKADI sends requests directly from your device to the provider/service or media server you selected. These requests can include authentication information, account/server identifiers, searches, library requests, playback state, watched/resume state, and media playback requests needed to perform the actions you request.</p>
+<p>Plex, Jellyfin, Emby, Emby Connect, and independently operated media servers have their own data practices and policies. SKADI is not affiliated with or endorsed by those services.</p>
+<p>Self-hosted media servers can be configured with HTTP or HTTPS. If you choose an <code>http://</code> server address, traffic to that server may not be encrypted. Prefer HTTPS whenever your server supports it.</p>
+
+<h2>4. Optional crash reporting</h2>
+<p>SKADI can send technical crash and diagnostic reports to Sentry, a service provider used to diagnose crashes and improve app reliability.</p>
+<p>On a fresh installation, crash reporting is <strong>off by default</strong>. SKADI sends these reports only after you affirmatively enable crash reporting in the app's privacy settings. You can disable future reporting at any time. In LG webOS beta builds, the app asks once, on the first Home screen, whether to turn reporting on; the answer is stored and both switches remain in Settings &rsaquo; Privacy.</p>
+<p>The app configures Sentry to avoid default PII and disables performance tracing, HTTP breadcrumbs, failed-request capture, and automatic session tracking. Before a report is sent, SKADI removes event user/request/server fields and filters tokens, authorization/cookie values, URLs, hosts, e-mail addresses, usernames, private addresses, and user filesystem paths from app-provided diagnostics.</p>
+<p>Crash reports can still contain technical information such as stack traces, app/release information, operating-system/device diagnostics, and network-level metadata needed to deliver the report.</p>
+<p>Sentry retention for this project: <span class="todo">TODO (owner): state the retention period configured in the Sentry project</span></p>
+
+<h3>Optional TV playback compatibility reports</h3>
+<p>On supported TVs (Android TV / Fire OS and LG webOS), SKADI can send a technical summary when a playback session ends. This is <strong>off by default</strong> and requires first enabling crash reports and then separately allowing playback compatibility reporting. Both preferences can be disabled.</p>
+<p>The report can contain the TV model and operating-system version (Android API level, or webOS and browser-engine version, firmware and SDK on LG webOS), video/audio/subtitle format metadata, resolution, HDR, declared playback strategy, first-frame timing, session duration, outcome and stop reason, dropped frames, rebuffering and audio-underrun counters. On LG webOS it also includes the media provider type, playback attempt counts, media error codes, and the results of checks of which formats the TV can decode. One capability report is sent per TV and app version.</p>
+<p>App-authored attributes do not contain titles, server names or addresses, URLs, file paths, tokens, user names or e-mail addresses. Unknown device model strings and unknown codecs are replaced by generic values.</p>
+<p>Sentry's handling of IP addresses and its retention for this project: <span class="todo">TODO (owner): describe the deployed Sentry project's IP data handling and retention</span></p>
+
+<h3>Windows and Linux</h3>
+<p>Crash reports and playback compatibility reports are opt-in and off by default; they are two separate choices, limited to technical data as described above.</p>
+
+<h2>5. Advertising, sale of data, and tracking</h2>
+<p>The audited Fire OS application does not include an advertising SDK, does not use an advertising ID for targeted advertising, and does not sell personal data.</p>
+<p>SKADI does not run a general user-behavior analytics or advertising-tracking pipeline in the audited Fire OS build.</p>
+
+<h2>6. Removing local data</h2>
+<p>You can remove the currently stored provider account from the device using SKADI's account/session controls. This clears session-owned local credentials and related local session data.</p>
+<p>Local SKADI profiles can also be managed in the app, subject to the app's profile-safety rules.</p>
+<p>Downloaded/offline media is managed separately and may need to be removed from the Downloads area or by clearing/uninstalling the app.</p>
+<p>Removing a provider account from SKADI does not delete the provider account itself. For example, a Plex authorization can remain in Plex Authorized Devices until it is removed through Plex.</p>
+
+<h2>7. Crash-report deletion</h2>
+<p>Disabling crash reporting stops future optional reports. It does not by itself delete historical reports already processed by Sentry.</p>
+<p>Deletion-request process: <span class="todo">TODO (owner): describe how to request deletion of diagnostic data</span></p>
+
+<h2>8. The problem-report page</h2>
+<p>The page at <a href="../report/">arthoriouss.github.io/skadi-releases/report/</a> is opened when you choose "Report a problem" in the app (on TV by scanning a QR code). The link contains technical details such as app version, build, platform, device model, operating system and server types (Plex, Jellyfin, Emby), so the report can be prefilled. The page uses no external scripts, fonts or trackers, and <strong>sends nothing by itself</strong>.</p>
+<p>What you then submit goes where you choose:</p>
+<ul>
+<li><strong>GitHub</strong>: the report becomes a <strong>public</strong> issue on the arthoriouss/skadi-releases repository, under your GitHub account. GitHub's own privacy statement applies.</li>
+<li><strong>Tally form</strong>: the report is <strong>private to the developer</strong>. Tally acts as the form provider and its own privacy policy applies. If you give an e-mail address, it is used only to follow up on your report.</li>
+</ul>
+<p>Please do not include server addresses, tokens, passwords or other personal data in a report.</p>
+
+<h2>9. Children</h2>
+<p>SKADI is a general media-server client. <span class="todo">TODO (owner): confirm the target-audience statement is consistent with the final distribution plan and applicable law.</span></p>
+
+<h2>10. Changes</h2>
+<p>This policy is updated whenever SKADI's data practices, SDKs, provider integrations, or support/deletion processes materially change. The "Last updated" date above shows the latest revision.</p>
+
+<h2>11. Contact</h2>
+<p>Support: <a href="https://github.com/arthoriouss/skadi-releases/issues">GitHub issues</a> or the <a href="../report/">report page</a>.</p>
+<p>Privacy contact: <span class="todo">TODO (owner): add the privacy contact address (none in the draft)</span></p>
+
+<footer><a href="../">SKADI</a></footer>
+</main>
+</body>
+</html>

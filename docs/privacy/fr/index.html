@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Politique de confidentialité - SKADI</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main>
+<nav class="lang"><a href="../" hreflang="en" lang="en">English</a></nav>
+<h1>Politique de confidentialité SKADI</h1>
+<p class="muted">Dernière mise à jour : 2026-10-21</p>
+<p class="muted">URL : https://arthoriouss.github.io/skadi-releases/privacy/fr/ (la version anglaise fait foi en cas de divergence.)</p>
+
+<h2>1. À propos de SKADI</h2>
+<p>SKADI est un client multimédia indépendant et non officiel qui se connecte aux serveurs et comptes choisis par l'utilisateur, notamment Plex, Jellyfin et Emby. SKADI n'héberge pas la médiathèque de l'utilisateur et ne crée pas de compte cloud SKADI.</p>
+
+<h2>2. Données stockées sur l'appareil</h2>
+<p>SKADI conserve localement les informations nécessaires au fonctionnement de l'application. Selon les fonctions utilisées, cela peut inclure :</p>
+<ul>
+<li>un identifiant client aléatoire propre à l'application/appareil ;</li>
+<li>les noms, identifiants, adresses et états de connexion des serveurs ;</li>
+<li>les profils SKADI locaux et leurs associations serveur/utilisateur ;</li>
+<li>les préférences d'accueil, de bibliothèque, de lecture, de langues, de watchlist et autres réglages ;</li>
+<li>les collections locales et l'historique des sources de lecture ;</li>
+<li>les jetons d'authentification et sessions fournisseur dans le stockage sécurisé du système ;</li>
+<li>les médias hors ligne et métadonnées de téléchargement quand cette fonction est utilisée.</li>
+</ul>
+<p>Ces informations locales ne sont pas envoyées vers un service de compte SKADI, car SKADI n'exploite pas un tel service.</p>
+
+<h2>3. Connexions à Plex, Jellyfin et Emby</h2>
+<p>Lorsque vous connectez un fournisseur ou un serveur, SKADI envoie directement depuis votre appareil les requêtes nécessaires vers le service ou serveur que vous avez choisi. Ces requêtes peuvent inclure des informations d'authentification, des identifiants de compte/serveur, des recherches, des requêtes de bibliothèque, l'état de lecture, l'état vu/reprise et les requêtes de lecture nécessaires aux actions demandées.</p>
+<p>Plex, Jellyfin, Emby, Emby Connect et les serveurs multimédias exploités par des tiers ont leurs propres pratiques et politiques. SKADI n'est ni affilié ni approuvé par ces services.</p>
+<p>Un serveur auto-hébergé peut utiliser HTTP ou HTTPS. Si vous choisissez une adresse <code>http://</code>, le trafic vers ce serveur peut ne pas être chiffré. Préférez HTTPS lorsque votre serveur le permet.</p>
+
+<h2>4. Rapports de crash facultatifs</h2>
+<p>SKADI peut envoyer des rapports techniques de crash et de diagnostic à Sentry, prestataire utilisé pour diagnostiquer les erreurs et améliorer la fiabilité.</p>
+<p>Sur une nouvelle installation, les rapports de crash sont <strong>désactivés par défaut</strong>. Ils ne sont envoyés qu'après activation affirmative dans les réglages de confidentialité. Vous pouvez désactiver les futurs rapports à tout moment. Dans les versions bêta LG webOS, l'application demande une seule fois, sur le premier écran d'accueil, si elle peut activer les rapports ; la réponse est conservée et les deux options restent dans Paramètres &rsaquo; Confidentialité.</p>
+<p>SKADI configure Sentry sans PII par défaut et désactive le tracing de performance, les breadcrumbs HTTP, la capture des requêtes échouées et le suivi automatique des sessions. Avant envoi, SKADI retire des événements les champs utilisateur/requête/serveur et filtre les jetons, autorisations/cookies, URL, hôtes, adresses e-mail, noms d'utilisateur, adresses privées et chemins utilisateur fournis par l'application.</p>
+<p>Un rapport peut néanmoins contenir des informations techniques telles que la pile d'appels, la version de l'application, des diagnostics système/appareil et des métadonnées réseau nécessaires à l'acheminement du rapport.</p>
+<p>Rétention Sentry du projet : <span class="todo">TODO (propriétaire) : indiquer la durée de rétention configurée dans le projet Sentry</span></p>
+
+<h3>Rapports facultatifs de compatibilité de lecture TV</h3>
+<p>Sur les appareils TV compatibles (Android TV / Fire OS et LG webOS), SKADI peut envoyer un résumé technique à la fin d'une lecture. Cette option est <strong>désactivée par défaut</strong>, nécessite d'abord l'accord aux rapports de crash, puis un consentement <strong>distinct</strong> pour la compatibilité de lecture. Les deux options sont révocables.</p>
+<p>Le résumé peut inclure le modèle de TV et la version du système (API Android, ou webOS, moteur du navigateur, firmware et SDK sur LG webOS), les métadonnées des formats vidéo/audio/sous-titres, la résolution, le HDR, la stratégie de lecture déclarée, la première image, la durée, l'issue et le motif d'arrêt, les images perdues, les rebufferings et les incidents audio. Sur LG webOS, il inclut aussi le type de fournisseur, le nombre de tentatives de lecture, les codes d'erreur média et les résultats de tests des formats que la TV sait décoder. Un rapport de capacités est envoyé par TV et par version de l'application.</p>
+<p>Les attributs applicatifs ne comprennent pas de titres, noms ou adresses de serveurs, URL, chemins de fichiers, jetons, noms d'utilisateur ou adresses e-mail. Les modèles d'appareil et codecs inconnus sont remplacés par des valeurs génériques.</p>
+<p>Traitement des adresses IP par Sentry et rétention pour ce projet : <span class="todo">TODO (propriétaire) : décrire la configuration effective du projet Sentry</span></p>
+
+<h3>Windows et Linux</h3>
+<p>Les rapports de crash et de compatibilité de lecture sont facultatifs et désactivés par défaut ; ce sont deux choix distincts, limités aux données techniques décrites ci-dessus.</p>
+
+<h2>5. Publicité, vente et suivi</h2>
+<p>L'application Fire OS auditée n'intègre pas de SDK publicitaire, n'utilise pas d'identifiant publicitaire pour de la publicité ciblée et ne vend pas de données personnelles.</p>
+<p>SKADI n'exploite pas de pipeline général d'analytics comportemental ou de tracking publicitaire dans le build Fire OS audité.</p>
+
+<h2>6. Suppression des données locales</h2>
+<p>Les contrôles de compte/session permettent de retirer de l'appareil le compte fournisseur actuellement enregistré. Cette opération supprime les identifiants locaux appartenant à la session et les données de session associées.</p>
+<p>Les profils SKADI locaux peuvent également être gérés dans l'application, selon les règles de sécurité des profils.</p>
+<p>Les médias téléchargés/hors ligne sont gérés séparément et peuvent devoir être supprimés depuis la zone Téléchargements ou en effaçant/désinstallant l'application.</p>
+<p>Retirer un compte fournisseur de SKADI ne supprime pas le compte chez le fournisseur. Par exemple, une autorisation Plex peut rester visible dans les appareils autorisés Plex jusqu'à sa suppression depuis Plex.</p>
+
+<h2>7. Suppression des rapports de crash</h2>
+<p>Désactiver les rapports de crash empêche les futurs envois facultatifs. Cela ne supprime pas à lui seul les rapports historiques déjà traités par Sentry.</p>
+<p>Processus de demande de suppression : <span class="todo">TODO (propriétaire) : décrire comment demander la suppression des données de diagnostic</span></p>
+
+<h2>8. La page de signalement</h2>
+<p>La page <a href="../../report/?lang=fr">arthoriouss.github.io/skadi-releases/report/</a> s'ouvre lorsque vous choisissez « Signaler un problème » dans l'application (sur TV, en scannant un QR code). Le lien contient des informations techniques (version, build, plateforme, modèle d'appareil, système, types de serveurs Plex, Jellyfin, Emby) pour préremplir le signalement. La page n'utilise aucun script, police ou traceur externe et <strong>n'envoie rien toute seule</strong>.</p>
+<p>Ce que vous envoyez ensuite va là où vous le choisissez :</p>
+<ul>
+<li><strong>GitHub</strong> : le signalement devient un ticket <strong>public</strong> du dépôt arthoriouss/skadi-releases, sous votre compte GitHub. La politique de confidentialité de GitHub s'applique.</li>
+<li><strong>Formulaire Tally</strong> : le signalement est <strong>privé et lu uniquement par le développeur</strong>. Tally fournit le formulaire et sa propre politique s'applique. Si vous indiquez une adresse e-mail, elle sert uniquement à répondre à votre signalement.</li>
+</ul>
+<p>N'incluez pas d'adresses de serveur, de jetons, de mots de passe ni d'autres données personnelles.</p>
+
+<h2>9. Enfants</h2>
+<p>SKADI est un client général de serveur multimédia. <span class="todo">TODO (propriétaire) : confirmer que la déclaration de public cible est cohérente avec le plan de distribution final et la législation applicable.</span></p>
+
+<h2>10. Modifications</h2>
+<p>Cette politique est mise à jour lorsque les pratiques de données, SDK, intégrations fournisseur ou procédures de support/suppression changent de manière significative. La date « Dernière mise à jour » indique la dernière révision.</p>
+
+<h2>11. Contact</h2>
+<p>Support : <a href="https://github.com/arthoriouss/skadi-releases/issues">tickets GitHub</a> ou la <a href="../../report/?lang=fr">page de signalement</a>.</p>
+<p>Confidentialité : <span class="todo">TODO (propriétaire) : ajouter l'adresse de contact confidentialité (aucune dans le brouillon)</span></p>
+
+<footer><a href="../../">SKADI</a></footer>
+</main>
+</body>
+</html>

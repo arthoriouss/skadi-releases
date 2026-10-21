@@ -1,0 +1,62 @@
+name: Bug report
+description: Report a problem with SKADI (beta)
+labels: ["bug", "beta"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. This issue is **public**. Do not paste server addresses, tokens, passwords or personal data.
+  - type: input
+    id: version
+    attributes:
+      label: SKADI version
+      placeholder: 1.0.0-beta.19
+  - type: input
+    id: build
+    attributes:
+      label: Build number
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: windows, linux, androidtv, fireos or webos
+  - type: input
+    id: device
+    attributes:
+      label: Device model
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      description: Name and version
+  - type: input
+    id: servers
+    attributes:
+      label: Server types
+      description: plex, jellyfin, emby (comma separated)
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      description: playback, navigation, connection or other
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+  - type: checkboxes
+    id: no_private_data
+    attributes:
+      label: Privacy check
+      options:
+        - label: I confirm I did not paste server URLs, tokens, passwords or other personal data.
+          required: true
