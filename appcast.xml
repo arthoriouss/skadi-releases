@@ -4,29 +4,33 @@
     <title>SKADI Windows Updates</title>
     <link>https://github.com/arthoriouss/skadi-releases/releases</link>
     <description>Signed SKADI desktop updates for Windows x64.</description>
-    <language>fr</language>
+    <language>en</language>
     <item>
-      <title>SKADI 1.0.0-beta.17</title>
-      <sparkle:version>51</sparkle:version>
-      <sparkle:shortVersionString>1.0.0-beta.17</sparkle:shortVersionString>
-      <pubDate>Mon, 07 Sep 2026 21:29:00 GMT</pubDate>
+      <title>SKADI 1.0.0-beta.21</title>
+      <sparkle:version>55</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta.21</sparkle:shortVersionString>
+      <pubDate>Mon, 02 Nov 2026 10:29:53 GMT</pubDate>
       <description><![CDATA[
 <div style="font-family: Segoe UI, sans-serif; font-size: 13px; line-height: 1.45; color: #202124; padding: 4px 8px;">
-<h1>SKADI 1.0.0-beta.17</h1>
-<p>Cette bêta inaugure la nouvelle chaîne de release desktop coordonnée de SKADI. Un même tag produit désormais le jeu Windows + Linux complet et la publication publique n’est effectuée qu’après validation de l’ensemble des artefacts.</p>
-<h2>Points principaux</h2>
-<ul><li><strong>Release factory coordonnée</strong> : le workflow de production gère désormais les tags <code>v*</code> et construit Windows et Linux dans une seule chaîne contrôlée.</li><li><strong>Linux prêt pour distribution</strong> : tar.gz portable, paquet Debian, RPM Fedora et bundle Flatpak sont générés à partir du chemin qualifié.</li><li><strong>Flatpak durci</strong> : pile mpv/libplacebo/libXpresent épinglée, X11/Wayland/VAAPI activés, DRM direct désactivé et branche exportée <code>stable</code>.</li><li><strong>Publication atomique</strong> : une nouvelle release reste en brouillon tant que tous les fichiers attendus et <code>appcast.xml</code> ne sont pas publiés avec succès.</li><li><strong>Windows conservé et vérifié</strong> : l’installateur, le ZIP portable et WinSparkle restent intégrés au même gate de release.</li></ul>
-<h2>Version</h2>
-<p>Le tag attendu est <code>v1.0.0-beta.17</code> et le build multi-plateforme est <code>51</code> (<code>1.0.51</code> pour la projection numérique webOS).</p>
+<h1>SKADI 1.0.0-beta.21 — One release for every platform</h1>
+<p>This is the first beta built and published by the coordinated release factory for <strong>every platform</strong> from one tag: Windows, Linux, LG webOS and the Android TV beta APK on GitHub, plus the Fire OS APK for Amazon Live App Testing. It is also the first public desktop release since beta.17.</p>
+<h2>Main changes</h2>
+<ul><li><strong>Background trailers are now off by default</strong> on Android TV / Fire OS and webOS. Turn them on in Settings (Background trailers, then Trailer sound). A choice already saved on a device or a SKADI profile is kept.</li><li><strong>New downloads:</strong> <code>SKADI-1.0.0-beta.21-webos.ipk</code> (LG webOS, Developer Mode / sideload) and <code>SKADI-1.0.0-beta.21-android-tv-beta.apk</code> (Android TV sideload, installs as &quot;SKADI Beta&quot; next to the store build).</li></ul>
+<h2>Since the last public release (beta.17)</h2>
+<ul><li><strong>Search:</strong> accent- and typo-tolerant ranking on every platform, search home with recent searches per profile.</li><li><strong>Server trailers</strong> (Plex, Jellyfin, Emby): Trailer action on the details page, optional muted preview behind the TV hero.</li><li><strong>Android TV / Fire OS playback:</strong> refresh-rate matching in three modes, next episode and track changes in the same player window, audio boost, adaptive normalization and dialogue enhancement after PCM decoding.</li><li><strong>webOS:</strong> sleep timer, Next episode at the top of the player settings, closed-beta features (English, themes, movie/show pages, Watchlist, Collections, Playlists, every Plex server of the account, opt-in Sentry reports).</li><li><strong>Jellyfin / Emby sign-in:</strong> a public address typed without a scheme is tried over HTTPS, and the password is never sent over plain HTTP without an explicit <code>http://</code>.</li><li>Full details in <code>CHANGELOG.md</code> (beta.18 to beta.21).</li></ul>
+<h2>Version and distribution</h2>
+<ul><li>Product version <code>1.0.0-beta.21</code>, build <strong>55</strong>; webOS package version <code>1.0.55</code>.</li><li>Android <code>versionCode</code> <strong>55</strong>, strictly greater than beta.20 (54) on the Live App Testing track. Identifier <code>com.skadi.client</code> and release signing unchanged.</li><li>GitHub release (<code>arthoriouss/skadi-releases</code>): Windows installer and portable ZIP, Linux <code>.deb</code>, <code>.tar.gz</code>, <code>.rpm</code> and Flatpak, webOS IPK, Android TV beta APK, <code>release-index.json</code> and <code>SHA256SUMS.txt</code>. Windows updates through WinSparkle (<code>appcast.xml</code>).</li><li>Fire OS: private Actions artifact <code>skadi-fireos-amazon-v1.0.0-beta.21</code> (APK), uploaded by hand to Amazon; the third-party source bundle is kept on the Windows runner. Steps: <code>docs/qualification/fire-os-live-app-testing-beta.21.md</code>.</li></ul>
+<h2>Qualification and limits</h2>
+<ul><li>First end-to-end run of the release factory on the self-hosted runners: webOS and Fire OS jobs are new and have not run before this tag.</li><li>The webOS IPK is the sideload package; LG Content Store submission stays manual.</li></ul>
 </div>
 
       ]]></description>
       <enclosure
-        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.17/SKADI-Setup-1.0.0-beta.17-windows-x64.exe"
-        length="84725624"
+        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.21/SKADI-Setup-1.0.0-beta.21-windows-x64.exe"
+        length="85145691"
         type="application/octet-stream"
         sparkle:os="windows-x64"
-        sparkle:edSignature="Y5nirNfByBrcyyRsihRg/qj4JvZg3sDeCMyyD6nnJPfw1zdKeNkD/mHBkNlvu+I/nu4woa43TMS+ZEIEwNStDw=="
+        sparkle:edSignature="eBr1F8jAfi7R85q9fEfLNZhU7IdlXdUbUXwHk3DQNZdWAXtbREe6sfn99wMXocXHHcTRQ9kfHpcEpy+pHZ6jDA=="
         sparkle:installerArguments="/SILENT /SP- /NOICONS /CLOSEAPPLICATIONS /NORESTARTAPPLICATIONS /RELAUNCH=1" />
     </item>
   </channel>
