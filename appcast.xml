@@ -6,29 +6,29 @@
     <description>Signed SKADI desktop updates for Windows x64.</description>
     <language>en</language>
     <item>
-      <title>SKADI 1.0.0-beta.22</title>
-      <sparkle:version>56</sparkle:version>
-      <sparkle:shortVersionString>1.0.0-beta.22</sparkle:shortVersionString>
-      <pubDate>Fri, 06 Nov 2026 13:41:48 GMT</pubDate>
+      <title>SKADI 1.0.0-beta.23</title>
+      <sparkle:version>57</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta.23</sparkle:shortVersionString>
+      <pubDate>Sat, 07 Nov 2026 11:17:04 GMT</pubDate>
       <description><![CDATA[
 <div style="font-family: Segoe UI, sans-serif; font-size: 13px; line-height: 1.45; color: #202124; padding: 4px 8px;">
-<h1>SKADI 1.0.0-beta.22 — Online subtitle search</h1>
+<h1>SKADI 1.0.0-beta.23 — Clearer connection errors</h1>
 <p>Built by the coordinated release factory from one tag: Windows, Linux, LG webOS and the Android TV beta APK on GitHub, plus the Fire OS APK for Amazon Live App Testing.</p>
 <h2>Main changes</h2>
-<ul><li><strong>Online subtitle search through Plex</strong> (webOS and Android TV / Fire OS): from the details page before playback and from the player options, by title, in every ISO 639-1 language, with release names and perfect matches highlighted. Remote-friendly keyboard and focus on TV.</li><li><strong>Android TV / Fire OS:</strong> next episode card during the final credits, technical badges under the player title, year and season count under related cards of the TV details page, and the details spotlight no longer overflows onto the rails.</li><li><strong>webOS (LG C9):</strong> more reliable playback (real position reported to Plex, chosen audio track of a direct file, embedded text subtitles, late subtitle tracks, position kept across setting changes, repeated quick seeks), technical badges in the player, smoother remote navigation, larger detail rail captions, &quot;Tout parcourir&quot; grid scrolling, Personnaliser l&#x27;accueil grouped by server.</li><li><strong>Continue Watching (Plex):</strong> removing a rewatched episode no longer hides the whole show.</li><li><strong>Desktop:</strong> Video and Audio sections in Settings; selected chips and focused menu entries stay readable.</li><li>Full details in <code>CHANGELOG.md</code>.</li></ul>
+<ul><li><strong>Connection errors explain themselves</strong> (Android TV / Fire OS / desktop): a refused HTTPS handshake (expired certificate, wrong device clock, outdated certificate store) now reads &quot;certificat HTTPS invalide&quot; instead of &quot;Erreur inconnue&quot;, with a short diagnostic code under the message. The code never contains server addresses or tokens.</li><li><strong>&quot;Envoyer le diagnostic&quot;</strong> on the connection error screen: it turns crash reporting on, like the privacy setting, and sends the failure. Unexplained session failures are also reported when crash reporting is already on.</li><li><strong>Android TV / Fire OS:</strong> signing out from the TV profile no longer crashes the app.</li><li>Full details in <code>CHANGELOG.md</code>.</li></ul>
 <h2>Version and distribution</h2>
-<ul><li>Product version <code>1.0.0-beta.22</code>, build <strong>56</strong>; webOS package version <code>1.0.56</code>.</li><li>Android <code>versionCode</code> <strong>56</strong>, strictly greater than beta.21 (55). Identifier <code>com.skadi.client</code> and release signing unchanged.</li><li>GitHub release (<code>arthoriouss/skadi-releases</code>): Windows installer and portable ZIP, Linux <code>.deb</code>, <code>.tar.gz</code>, <code>.rpm</code> and Flatpak, webOS IPK, Android TV beta APK, <code>release-index.json</code> and <code>SHA256SUMS.txt</code>. Windows updates through WinSparkle (<code>appcast.xml</code>).</li><li>Fire OS: private Actions artifact <code>skadi-fireos-amazon-v1.0.0-beta.22</code> (APK), uploaded by hand to Amazon Live App Testing. Steps: <code>docs/qualification/fire-os-live-app-testing-beta.22.md</code>.</li><li>Google Play (Android TV): the store AAB is built locally with <code>scripts/windows/build-android-tv-release.ps1</code> (production channel, <code>com.skadi.client</code>); the factory APK is the sideload beta (<code>com.skadi.client.beta</code>).</li></ul>
+<ul><li>Product version <code>1.0.0-beta.23</code>, build <strong>57</strong>; webOS package version <code>1.0.57</code>.</li><li>Android <code>versionCode</code> <strong>57</strong>, strictly greater than beta.22 (56). Identifier <code>com.skadi.client</code> and release signing unchanged.</li><li>GitHub release (<code>arthoriouss/skadi-releases</code>): Windows installer and portable ZIP, Linux <code>.deb</code>, <code>.tar.gz</code>, <code>.rpm</code> and Flatpak, webOS IPK, Android TV beta APK, <code>release-index.json</code> and <code>SHA256SUMS.txt</code>. Windows updates through WinSparkle (<code>appcast.xml</code>).</li><li>Fire OS: private Actions artifact <code>skadi-fireos-amazon-v1.0.0-beta.23</code> (APK), uploaded by hand to Amazon Live App Testing as a new version of the existing test.</li><li>Google Play (Android TV): the store AAB is built locally with <code>scripts/windows/build-android-tv-release.ps1</code> (production channel, <code>com.skadi.client</code>) and uploaded to the internal testing track; the factory APK is the sideload beta (<code>com.skadi.client.beta</code>).</li></ul>
 <h2>Qualification and limits</h2>
 <ul><li>The webOS IPK is the sideload package; LG Content Store submission stays manual.</li></ul>
 </div>
 
       ]]></description>
       <enclosure
-        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.22/SKADI-Setup-1.0.0-beta.22-windows-x64.exe"
-        length="85181380"
+        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.23/SKADI-Setup-1.0.0-beta.23-windows-x64.exe"
+        length="85186030"
         type="application/octet-stream"
         sparkle:os="windows-x64"
-        sparkle:edSignature="wbHIa6eBHoKdTNPKIuvXOlMWBcdGN7RmF+AcyD6MpsjS5uHRcPnaFt7oF6gedsPlaU4DJmQJ02/oSd9hqDEhCw=="
+        sparkle:edSignature="DwbwrnsnVaXYUNDSxzGBhYM8QkGTWStGrZ+pRM5OYKACxA7EKLxSqkH4D1Jdz7E3xye1vDmqBsUPaTvXu/RaBg=="
         sparkle:installerArguments="/SILENT /SP- /NOICONS /CLOSEAPPLICATIONS /NORESTARTAPPLICATIONS /RELAUNCH=1" />
     </item>
   </channel>
