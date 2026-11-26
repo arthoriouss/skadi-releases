@@ -6,29 +6,33 @@
     <description>Signed SKADI desktop updates for Windows x64.</description>
     <language>en</language>
     <item>
-      <title>SKADI 1.0.0-beta.23</title>
-      <sparkle:version>57</sparkle:version>
-      <sparkle:shortVersionString>1.0.0-beta.23</sparkle:shortVersionString>
-      <pubDate>Sat, 07 Nov 2026 11:17:04 GMT</pubDate>
+      <title>SKADI 1.0.0-beta.24</title>
+      <sparkle:version>58</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta.24</sparkle:shortVersionString>
+      <pubDate>Thu, 26 Nov 2026 19:49:32 GMT</pubDate>
       <description><![CDATA[
 <div style="font-family: Segoe UI, sans-serif; font-size: 13px; line-height: 1.45; color: #202124; padding: 4px 8px;">
-<h1>SKADI 1.0.0-beta.23 — Clearer connection errors</h1>
+<h1>SKADI 1.0.0-beta.24 — Discover, Watch Together and Plex friends</h1>
 <p>Built by the coordinated release factory from one tag: Windows, Linux, LG webOS and the Android TV beta APK on GitHub, plus the Fire OS APK for Amazon Live App Testing.</p>
 <h2>Main changes</h2>
-<ul><li><strong>Connection errors explain themselves</strong> (Android TV / Fire OS / desktop): a refused HTTPS handshake (expired certificate, wrong device clock, outdated certificate store) now reads &quot;certificat HTTPS invalide&quot; instead of &quot;Erreur inconnue&quot;, with a short diagnostic code under the message. The code never contains server addresses or tokens.</li><li><strong>&quot;Envoyer le diagnostic&quot;</strong> on the connection error screen: it turns crash reporting on, like the privacy setting, and sends the failure. Unexplained session failures are also reported when crash reporting is already on.</li><li><strong>Android TV / Fire OS:</strong> signing out from the TV profile no longer crashes the app.</li><li>Full details in <code>CHANGELOG.md</code>.</li></ul>
+<ul><li><strong>Discover</strong> (desktop, Android TV / Fire OS, webOS): the plex.tv catalog, with:</li><li>Plex rails and catalog sheets;</li><li>trailers in the SKADI player;</li><li>your streaming services;</li><li>the watchlist synced with your plex.tv account.</li></ul>
+<p>A title one of your servers has opens in your library.</p>
+<ul><li><strong>Watch Together</strong> through the SKADI relay (desktop, Android TV / Fire OS, webOS): rooms with a code, and the TV can host or join. The current relay is a test deployment.</li><li><strong>Plex friends</strong> (read only):</li><li>« Avis de tes amis » on Plex movie and series pages;</li><li>« Activité des amis » in Discover.</li><li><strong>Player:</strong></li><li>seek preview pictures (Plex BIF thumbnails, Jellyfin trickplay) on webOS and Android TV / Fire OS;</li><li>a subtitle delay on webOS.</li><li><strong>Google TV / Android TV:</strong> SKADI&#x27;s « Continuer » row appears in the home screen&#x27;s « Continuer à regarder ».</li><li><strong>webOS:</strong></li><li>« Qui regarde ? » at launch;</li><li>a stronger focus ring and the full title on the focused card;</li><li>text sizes harmonized on search, detail, library and settings pages.</li><li>Recently added episodes are grouped like Plex, and empty, offline and failure states were redesigned.</li><li>Full details in <code>CHANGELOG.md</code>.</li></ul>
 <h2>Version and distribution</h2>
-<ul><li>Product version <code>1.0.0-beta.23</code>, build <strong>57</strong>; webOS package version <code>1.0.57</code>.</li><li>Android <code>versionCode</code> <strong>57</strong>, strictly greater than beta.22 (56). Identifier <code>com.skadi.client</code> and release signing unchanged.</li><li>GitHub release (<code>arthoriouss/skadi-releases</code>): Windows installer and portable ZIP, Linux <code>.deb</code>, <code>.tar.gz</code>, <code>.rpm</code> and Flatpak, webOS IPK, Android TV beta APK, <code>release-index.json</code> and <code>SHA256SUMS.txt</code>. Windows updates through WinSparkle (<code>appcast.xml</code>).</li><li>Fire OS: private Actions artifact <code>skadi-fireos-amazon-v1.0.0-beta.23</code> (APK), uploaded by hand to Amazon Live App Testing as a new version of the existing test.</li><li>Google Play (Android TV): the store AAB is built locally with <code>scripts/windows/build-android-tv-release.ps1</code> (production channel, <code>com.skadi.client</code>) and uploaded to the internal testing track; the factory APK is the sideload beta (<code>com.skadi.client.beta</code>).</li></ul>
+<ul><li>Product version <code>1.0.0-beta.24</code>, build <strong>58</strong>; webOS package version <code>1.0.58</code>.</li><li>Android <code>versionCode</code> <strong>58</strong>, strictly greater than beta.23 (57). Identifier <code>com.skadi.client</code> and release signing unchanged.</li><li><strong>GitHub release</strong> (<code>arthoriouss/skadi-releases</code>):</li><li>Windows installer and portable ZIP;</li><li>Linux <code>.deb</code>, <code>.tar.gz</code>, <code>.rpm</code> and Flatpak;</li><li>webOS IPK;</li><li>Android TV beta APK;</li><li><code>release-index.json</code> and <code>SHA256SUMS.txt</code>.</li></ul>
+<p>Windows updates through WinSparkle (<code>appcast.xml</code>).</p>
+<ul><li><strong>Fire OS:</strong> the private Actions artifact <code>skadi-fireos-amazon-v1.0.0-beta.24</code> (APK) is uploaded by hand to Amazon Live App Testing, as a new version of the existing test.</li><li><strong>Google Play (Android TV):</strong></li><li>The store AAB is built locally with <code>scripts/windows/build-android-tv-release.ps1</code> (production channel, <code>com.skadi.client</code>) and uploaded to the internal testing track.</li><li>The factory APK is the sideload beta (<code>com.skadi.client.beta</code>).</li></ul>
 <h2>Qualification and limits</h2>
-<ul><li>The webOS IPK is the sideload package; LG Content Store submission stays manual.</li></ul>
+<ul><li>The webOS IPK is the sideload package; LG Content Store submission stays manual.</li><li>Plex friends&#x27; reviews and activity use plex.tv&#x27;s unofficial community API. If plex.tv changes it, the sections hide themselves.</li><li>The Watch Together relay runs on a test domain until the final one is set up.</li></ul>
 </div>
 
       ]]></description>
       <enclosure
-        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.23/SKADI-Setup-1.0.0-beta.23-windows-x64.exe"
-        length="85186030"
+        url="https://github.com/arthoriouss/skadi-releases/releases/download/v1.0.0-beta.24/SKADI-Setup-1.0.0-beta.24-windows-x64.exe"
+        length="85338036"
         type="application/octet-stream"
         sparkle:os="windows-x64"
-        sparkle:edSignature="DwbwrnsnVaXYUNDSxzGBhYM8QkGTWStGrZ+pRM5OYKACxA7EKLxSqkH4D1Jdz7E3xye1vDmqBsUPaTvXu/RaBg=="
+        sparkle:edSignature="8ztnQ3qT28WWjeJa/+5I6Bn2I6AxSetQ8PSJGBBLhE+KCf8RRwkz3ybS5UFGZ5r7pe1SSMTjVODwjdGIN41MBg=="
         sparkle:installerArguments="/SILENT /SP- /NOICONS /CLOSEAPPLICATIONS /NORESTARTAPPLICATIONS /RELAUNCH=1" />
     </item>
   </channel>
